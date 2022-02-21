@@ -33,7 +33,7 @@ router.post('/', [
     if(!errors.isEmpty()){
         return res.status(400).json({ errors: errors.array() });
     }
-
+    
     const { email, password } = req.body;
 
     try{
@@ -61,7 +61,6 @@ router.post('/', [
         console.error(err.message);
         res.status(500).send('Server Error');
     }
-
 });
 
 module.exports = router;
